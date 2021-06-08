@@ -67,12 +67,12 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mollybeach/chromagene.git"
+    "url": "git+https://github.com/mollybeach/treemulator.git"
   },
   "author": "Molly Beach",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mollybeach/chromagene/issues"
+    "url": "https://github.com/mollybeach/treemulator/issues"
   },
-  "homepage": "https://chromagene.netlify.app/"
+  "homepage": "https://treemulator.netlify.app/"
 }

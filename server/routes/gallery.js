@@ -1,5 +1,5 @@
 const express = require("express");
-const galleryList = require("../data/chromosome.json");
+const galleryList = require("../data/tree.json");
 const router = express.Router();
 const fs = require("fs");
 

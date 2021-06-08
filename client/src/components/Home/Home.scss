@@ -79,8 +79,9 @@
 .hero-container {
 	display: flex;
 	position: relative;
-	background-image: url('../../assets/Icons/fancydna.svg');
+	background-image: url('../../assets/Icons/blacktree.svg');
 	background-size: 150%;
+	background-repeat: no-repeat;
 	margin-top: 200px;
 	 ::before {
 		content: "";

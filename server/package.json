@@ -1,21 +1,21 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "Molly Beach Capstone",
+  "description": "Molly Beach Binary Tree Converter",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mollybeach/chromagene.git"
+    "url": "git+https://github.com/mollybeach/biTreemulator.git"
   },
   "author": "Molly Beach",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mollybeach/chromagene/issues"
+    "url": "https://github.com/mollybeach/biTreemulator/issues"
   },
-  "homepage": "https://chromagene.netlify.app/",
+  "homepage": "https://biTreemulator.netlify.app/",
   "dependencies": {
     "@react-firebase/auth": "^0.2.10",
     "axios": "^0.21.1",
