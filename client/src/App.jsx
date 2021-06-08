@@ -4,7 +4,7 @@ import axios from 'axios';
 import Header from "./components/Header/Header";
 import Home from './components/Home/Home';
 import Gallery from './components/Gallery/Gallery';
-
+import Input from './components/Input/Input';
 
 //import SnpCodeLoad from './components/Gallery/snpCodeLoad';
 import UploadFile from "./components/UploadFile/UploadFile";
@@ -60,7 +60,7 @@ axios.get('http://localhost:8080/uploadfile').then(res=>{
           <Route exact path={[`/`, `/home`]} render = {(props)=> <Home   homeList = {homeList}   {...props}  />} />
           <Route exact path={[`/gallery`]} render = {(props)=> <Gallery galleryList = {galleryList}  {...props} />} />
           <Route exact path = '/uploadfile' render = {(props)=> <UploadFile uploadFileList = {uploadFileList}  {...props} />}  />
-
+          <Route exact path = '/input' render = {(props)=> <Input galleryList = {galleryList}  {...props} />}  />
      
           </Switch> 
         </BrowserRouter>

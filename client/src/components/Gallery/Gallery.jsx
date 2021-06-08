@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import chevronImg from "../../assets/Icons/chevron_right-24px.svg";
-//import Spcode from './spCode.jsx';
+import GS from './spCode.js';
+import Input from '../Input/Input.jsx'
 import './Gallery.scss';
+import '../Input/input.scss';
 
 class Gallery extends Component {
   
@@ -37,18 +39,19 @@ render(){
           <div className="gallery__title "> biTreemulator:
             <img className="gallery__arrow" src={chevronImg} alt="img" />
           </div>
-          <div className="gallery__subtitle "> 
+          <div className="gallery__subtitle "> Create 
           </div>
           <div className="gallery__subtitle "> Simulated Display: </div>
           <div className="gallery__about " >
           </div>
           </div>
         </div>
-  
+        <Input/>
+        <GS galleryList = {this.state.galleryList}  draw = {this.state.draw}  />
       </>   
         );
         }
 }
 
 export default Gallery;
-//  <Spcode galleryList = {this.state.galleryList}  draw = {this.state.draw}  />
+
