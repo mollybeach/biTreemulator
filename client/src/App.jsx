@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 import Header from "./components/Header/Header";
 import Home from './components/Home/Home';
-import Gallery from './components/Gallery/Gallery';
+import Simulator from './components/Simulator/Simulator';
 import Input from './components/Input/Input';
 import UploadFile from "./components/UploadFile/UploadFile";
 
@@ -25,7 +25,7 @@ componentDidMount(){
     this.setState({
       homeList:res.data
     })
-    axios.get('http://localhost:8080/gallery').then(res=>{
+    axios.get('http://localhost:8080/simulator').then(res=>{
         this.setState({
           treeList:res.data
         })
@@ -56,7 +56,7 @@ axios.get('http://localhost:8080/uploadfile').then(res=>{
         <Header />
         <Switch>
           <Route exact path={[`/`, `/home`]} render = {(props)=> <Home   homeList = {homeList}   {...props}  />} />
-          <Route exact path={[`/gallery`]} render = {(props)=> <Gallery treeList = {treeList}  {...props} />} />
+          <Route exact path={[`/simulator`]} render = {(props)=> <Simulator treeList = {treeList}  {...props} />} />
           <Route exact path = '/uploadfile' render = {(props)=> <UploadFile uploadFileList = {uploadFileList}  {...props} />}  />
           <Route exact path = '/input' render = {(props)=> <Input treeList = {treeList}  {...props} />}  />
      

@@ -3,7 +3,7 @@ const treeList = require("../data/tree.json");
 const router = express.Router();
 const fs = require("fs");
 
-router.get("/gallery", (req, res) => {
+router.get("/simulator", (req, res) => {
    res.status(200).json(treeList);
 });
 

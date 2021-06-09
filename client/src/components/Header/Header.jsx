@@ -15,7 +15,7 @@ function Header() {
             <NavLink to="/" exact className="header__nav-item" activeClassName="header__nav-item--active"><span>Home</span></NavLink>
           </li>
           <li>
-            <NavLink to="/gallery" className="header__nav-item" activeClassName="header__nav-item"><span>Simulator</span></NavLink>
+            <NavLink to="/simulator" className="header__nav-item" activeClassName="header__nav-item"><span>Simulator</span></NavLink>
           </li>
           <li>
             <NavLink to="/uploadfile" className="header__nav-item" activeClassName="header__nav-item"><span>Upload</span></NavLink>
