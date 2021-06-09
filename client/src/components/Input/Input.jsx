@@ -1,44 +1,40 @@
 
-import React, { Component } from "react";
+
+//import React, { useEffect, useState,useRef  } from "react";
+import React, { useState } from "react";
 import './Input.scss'
 //import axios from 'axios';
 
+const Input = ({ simulatorList }) => { 
+    const [inputValue, setValue] = useState("hellaw");
+    const [subreddit, setSubreddit] = useState(inputValue);
 
-
-
-
-class Input extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {value: 'JSON.stringify(tree)'};
-      this.handleChange = this.handleChange.bind(this);
-    }
-    
-    handleChange(e) {
+    const handleChange = e => {
       this.setState({value: e.target.value});
-    }
-  
+    };
     
-    render() {
+   
       return(
         <>
         <div className="container">
           <h1 className="intro">Binary Tree Visualization </h1>
           <div className="box">
-          
-   <textarea className="input-is-medium" type='text' id='input' value={this.state.value} onChange={this.handleChange} 
-             rows={5}
-            cols={5}
-  />
-        
+            <textarea
+              className="input-is-medium"
+              type="text"
+              id="input"
+              value={inputValue}
+              onChange={(e) => setValue(e.target.value)}
+              rows={5}
+              cols={5}
+            />
+              <p className="input-value">The value of the input is: <span className="highlight">{inputValue}</span></p>
           </div>
-          
         </div>
-     
+      </>
       
-        </>
       );
-    }
+    
   }
 
 

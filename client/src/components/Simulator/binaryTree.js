@@ -1,3 +1,9 @@
+
+
+  
+
+
+
 /* eslint-disable */
 export function binaryTree() { 
 
@@ -51,7 +57,8 @@ export function binaryTree() {
              }
            }
   }
-  
+
+
   let gen = getSpace(), sig=0;
   
   function graph(gen) {
@@ -75,8 +82,9 @@ export function binaryTree() {
   }
   
     build(tree, gen);
-  
+  console.log(tree)
   
   
   }
+
   
