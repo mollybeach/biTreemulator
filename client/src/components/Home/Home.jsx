@@ -19,7 +19,7 @@ class Home extends Component {
           <div className="home__about " >
             Start your journey by entering a binary tree object or array. 
             <div className="home__buttons">
-            <Link to="/uploadfile">  <button className="btn btn--delta" type="submit"><span>Get Started</span></button></Link>
+            <Link to="/simulator">  <button className="btn btn--delta" type="submit"><span>Get Started</span></button></Link>
             </div>
           </div>
           </div>

@@ -39,13 +39,11 @@ const Simulator = ({ simulatorList }) => {
   return (
     <>
     <div className="simulator">
-    
     <div>
-
     <div className='simulator__inside '> 
     <div className="simulator__title "> biTreemulator:
             <img className="simulator__arrow" src={chevronImg} alt="img" />
-          </div>
+      </div>
           <Input />
       <canvas className="my-canvas"></canvas>
       <iframe title="miframie" ref={shadeRef}>
