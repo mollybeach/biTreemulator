@@ -1,10 +1,72 @@
-import {tree} from '../Input/Input';
+//import {tree} from '../Input/Input';
+//import GS from './spCode.js'
+async function firstFunction(){
+  let tree = {
+    "val": 0,
+      "left": 	{
+        "val": 1,
+             "left": { "val": 2, 
+                        "left": { "val": 3, 
+                                   "left": { "val": 4, 
+                                              "left":{ "val": 5, "left":null, "right":null},
+                                              "right": { "val": 6, 
+                                                          "left":{ "val": 7, "left":null, "right":null},
+                                                          "right":{ "val": 8, "left":null, "right":null}
+                                                        } 
+                                          }          
+                              },
+                       "right": null
+                   },
+            "right": { "val": 9, 
+                        "left": { "val": 10, "left":null, "right":null},
+                        "right": null
+                } 
+            },
+    
+     "right": {
+         "val": 11,
+               "left": { "val": 12, 
+                        "left": null, 
+                        "right": null
+                   },
+              "right": {
+                   "val": 13,
+                        "left": null,
+                        "right": { "val": 14, 
+                                   "left": { "val": 15, 
+                                              "left":{ "val": 16, 
+                                                        "left":null, 
+                                                        "right": { "val": 17, "left":null, "right":null}
+                                                    }, 
+                                              "right":null 
+                                          }, 
+                                   "right": { "val": 18, 
+                                              "left":null, 
+                                              "right": { "val": 19, 
+                                                          "left":{ "val": 20, "left":null, "right":null},
+                                                          "right":null
+                                                        }
+                                          }
+               }
+             }
+           }
+  }
+  return tree
+};
+
+
 /* eslint-disable */
-export function binaryTree() { 
+async function binaryTree() { 
+  
+    try {
+      await firstFunction()
+  } catch (e) {
+      console.error(e);
+  } finally {
+      console.log('We do cleanup here');
+  }
 
-
-
-let gen = getSpace(), sig=0;
+ let gen = getSpace(), sig=0;
 
 function graph(gen) {
      displace(0.0,0.5,0.0);
@@ -32,5 +94,7 @@ function build(tree, gen) {
 
 }
 
+
+module.exports.binaryTree = binaryTree;
 
 

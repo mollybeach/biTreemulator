@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react';
 //import { glslToMinimalRenderer } from 'shader-park-core';
 import {sculptToMinimalRenderer} from 'shader-park-core';
 
-import { binaryTree} from './binaryTree.js';
+import binaryTree from './binaryTree.js';
 /****************USE HOOKS TO LOAD SHADER ***********************/
-const GS = ({ treeList }) => { 
+const GS = ({ binaryTr}) => { 
   const shadeRef = useRef(null);
   useEffect(() => {
     if (shadeRef.current) {
