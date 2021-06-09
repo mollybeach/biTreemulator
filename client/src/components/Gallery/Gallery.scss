@@ -105,13 +105,13 @@
 }
 */
 .my-canvas {
-	position: absolute;
+	//position: absolute;
 	width: 40vw;
 	height: 40vw;
 	border: 40px solid lavender;
 //	margin-top: 300px;
    left: 200px;
-	margin-right: 300px;
+	margin-right: 50px;
 	margin-bottom: 300px;
 	top: 400px;
 	@include tablet{
@@ -127,8 +127,8 @@
 	}
 		@include desktop{
 		margin-left: 80px;
-		width: 40vw;
-		height: 40vw;
+		width: 70vw;
+		height: 60vw;
 	}
   }
 .removeAddtionalFrame{

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import chevronImg from "../../assets/Icons/chevron_right-24px.svg";
-//import GS from './spCode.js';
+
 import Input from '../Input/Input.jsx'
 import './Gallery.scss';
 import '../Input/Input.scss';
@@ -39,7 +39,7 @@ render(){
           <div className="gallery__title "> biTreemulator:
             <img className="gallery__arrow" src={chevronImg} alt="img" />
           </div>
-          <Input/>
+          <Input treeList = {this.state.treeList}  draw = {this.state.draw}/>
   
           </div>
         </div>
@@ -52,4 +52,3 @@ render(){
 
 export default Gallery;
 //  <div className="gallery__subtitle "> Simulated Display: </div>
-//        <GS treeList = {this.state.treeList}  draw = {this.state.draw}  />
