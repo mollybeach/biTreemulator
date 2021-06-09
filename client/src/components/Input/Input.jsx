@@ -1,15 +1,15 @@
 
 import React, { Component } from "react";
-import './input.scss'
+import './Input.scss'
 //import axios from 'axios';
 
 
-import '../Gallery/Gallery.scss';
+import '../Gallery/Gallery';
 
 class Input extends Component {
     constructor(props) {
       super(props);
-      this.state = {value: '{}'};
+      this.state = {value: '{val:{}}'};
       this.handleChange = this.handleChange.bind(this);
     }
     
@@ -23,7 +23,7 @@ class Input extends Component {
         <div className="container">
           <h1 className="intro">Binary Tree Visualization</h1>
           <div className="box">
-            <label className="label">Enter Binary Input</label>
+            <label className="labela">Enter Binary Input</label>
    <textarea className="input-is-medium" type='text' id='input' value={this.state.value} onChange={this.handleChange} 
              rows={5}
             cols={5}

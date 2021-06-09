@@ -4,7 +4,7 @@ import {sculptToMinimalRenderer} from 'shader-park-core';
 
 import { binaryTree} from './binaryTree';
 /****************USE HOOKS TO LOAD SHADER ***********************/
-const GS = ({ galleryList }) => { 
+const GS = ({ treeList }) => { 
   const shadeRef = useRef(null);
   useEffect(() => {
     if (shadeRef.current) {
@@ -17,13 +17,13 @@ const GS = ({ galleryList }) => {
 
 
   //  let source = spCode.toString();
-   // let sourceRes = `let lstp = JSON.parse(\`${galleryList}\`);\n` + source;
+   // let sourceRes = `let lstp = JSON.parse(\`${treeList}\`);\n` + source;
    //console.log(sourceRes);
 
      /*
       // With a function defined separately
      getData().then((resp) => {
-     // sculptToMinimalRenderer(canvas, fullSpCode(JSON.stringify(galleryList)));
+     // sculptToMinimalRenderer(canvas, fullSpCode(JSON.stringify(treeList)));
       //sculptToMinimalRenderer(canvas, 'sphere(0.5);');
      */
      
