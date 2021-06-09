@@ -2,22 +2,58 @@
 import React, { Component } from "react";
 import './Input.scss'
 //import axios from 'axios';
+
 import GS from '../Gallery/spCode.js';
 
 import '../Gallery/Gallery';
-let tree = {
-  val: 1,      
-  left: { val: 2,            
-                  left: { val: 3,        
-                            left: { val: 4, left: null, right: null },
-                            right: { val: 4, left: null, right: null }
-                         },       
-                     
-                  right: { val: 3, left: null, right: null },
-         },   
-  right:  { val: 2, 
-                  left: null,  
-                  right: null,  
+export let tree = {
+  "val": 0,
+  	"left": 	{
+    	"val": 1,
+    	     "left": { "val": 2, 
+                		  "left": { "val": 3, 
+                		             "left": { "val": 4, 
+                                            "left":{ "val": 5, "left":null, "right":null},
+                                            "right": { "val": 6, 
+                                                        "left":{ "val": 7, "left":null, "right":null},
+                                                        "right":{ "val": 8, "left":null, "right":null}
+                                                      } 
+                		                    }          
+                            },
+                		 "right": null
+          			 },
+          "right": { "val": 9, 
+                  	  "left": { "val": 10, "left":null, "right":null},
+                      "right": null
+          		} 
+  		    },
+  
+ 	"right": {
+    	 "val": 11,
+           	"left": { "val": 12, 
+                      "left": null, 
+                      "right": null
+                 },
+   		  	 "right": {
+     		      	"val": 13,
+      			          "left": null,
+     		             "right": { "val": 14, 
+                                 "left": { "val": 15, 
+                                            "left":{ "val": 16, 
+                                                      "left":null, 
+                                                      "right": { "val": 17, "left":null, "right":null}
+                                                  }, 
+                                            "right":null 
+                		                    }, 
+                                 "right": { "val": 18, 
+                                            "left":null, 
+                                            "right": { "val": 19, 
+                                                        "left":{ "val": 20, "left":null, "right":null},
+                                                        "right":null
+                                                      }
+                                        }
+             }
+           }
          }
 }
 ;
@@ -44,16 +80,18 @@ class Input extends Component {
              rows={5}
             cols={5}
   />
-            <p className="input-value">The value of the input is: <span className="highlight">{this.state.value}</span></p>
+        
           </div>
           
         </div>
-       <GS treeList = {this.state.treeList}  draw = {this.state.draw}  />
+     
+       <GS treeList = {this.state.value}  draw = {this.state.draw}  />
         </>
       );
     }
   }
 
-  
+
   export default Input;
   //  <label className="label">Enter Binary Input</label>
+  //    <p className="input-value">The value of the input is: <span className="highlight">{this.state.value}</span></p>
