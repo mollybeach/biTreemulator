@@ -1,41 +1,37 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {sculptToMinimalRenderer} from 'shader-park-core';
 //import { glslToMinimalRenderer } from 'shader-park-core';
-import Input from '../Input/Input.jsx';
-import {tree} from './tree'
-import {binaryTree} from './binaryTree'
+//import Input from '../Input/Input.jsx';
+//import {inputtree} from '../Input/Input'
+
+
 import './Simulator.scss';
 
 /* eslint-disable */
-let prepend = () =>{
- let res= `let tree = JSON.parse(\`${tree}\`);\n let binaryTree = ${binaryTree} \n binaryTree(tree)`
+/*let prepend = () =>{
+ let res= `let tree = JSON.parse(\`${inputtree}\`);\n let binaryTree = ${binaryTree} \n binaryTree(tree)`
  return res
 }
-const Simulator = ({ tree }) => { 
+*/
+const Simulator = ({ inputtree }) => { 
   const shadeRef = useRef(null);
-
   useEffect(() => {
     if (shadeRef.current) {
       const canvas = document.querySelector(".my-canvas");
-      sculptToMinimalRenderer(canvas, prepend());
+      sculptToMinimalRenderer(canvas, inputtree);
        //glslToMinimalRenderer(canvas, spCode);
     }
-  }, tree);
+  }, inputtree);
+
+    
 
   return (
 <>
-  <div className="simulator">
-    <div>
-      <div className="simulator__inside ">
-        <div className="simulator__title "> biTreemulator:</div>
-        <Input />
         <canvas className="my-canvas"></canvas>
         <iframe title="miframie" ref={shadeRef}>
           <body className="removeAdditionaFrame"></body>
         </iframe>
-      </div>
-    </div>
-  </div>
+
 </>
   );
 };

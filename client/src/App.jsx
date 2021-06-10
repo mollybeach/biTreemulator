@@ -56,9 +56,9 @@ axios.get('http://localhost:8080/uploadfile').then(res=>{
         <Header />
         <Switch>
           <Route exact path={[`/`, `/home`]} render = {(props)=> <Home   homeList = {homeList}   {...props}  />} />
-          <Route exact path={[`/simulator`]} render = {(props)=> <Simulator treeList = {treeList}  {...props} />} />
+          <Route exact path={[`/input`]} render = {(props)=> <Simulator treeList = {treeList}  {...props} />} />
           <Route exact path = '/uploadfile' render = {(props)=> <UploadFile uploadFileList = {uploadFileList}  {...props} />}  />
-          <Route exact path = '/input' render = {(props)=> <Input treeList = {treeList}  {...props} />}  />
+          <Route exact path = '/simulator' render = {(props)=> <Input treeList = {treeList}  {...props} />}  />
      
           </Switch> 
         </BrowserRouter>
