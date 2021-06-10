@@ -7,20 +7,19 @@ import './Input.scss'
 
 const Input = ({ simulatorList }) => { 
     const [inputValue, setValue] = useState("hellaw");
-    const [subreddit, setSubreddit] = useState(inputValue);
+    const [example1, example2] = useState(inputValue);
 
     const handleChange = e => {
       this.setState({value: e.target.value});
     };
-    
-   
+     
       return(
         <>
-        <div className="container">
-          <h1 className="intro">Binary Tree Visualization </h1>
-          <div className="box">
+        <div className="input__container">
+          <h1 className="input__intro">Binary Tree Visualization </h1>
+          <div className="input__box">
             <textarea
-              className="input-is-medium"
+              className="input__input-is-medium"
               type="text"
               id="input"
               value={inputValue}
@@ -28,7 +27,7 @@ const Input = ({ simulatorList }) => {
               rows={5}
               cols={5}
             />
-              <p className="input-value">The value of the input is: <span className="highlight">{inputValue}</span></p>
+              <p className="input__input-value">The value of the input is: <span className="input__highlight">{inputValue}</span></p>
           </div>
         </div>
       </>
@@ -37,7 +36,7 @@ const Input = ({ simulatorList }) => {
     
   }
 
-
+//   const [inputValue] = useState([{ text: 'Learn Hooks' }]);[inputValue]= useState(inputValue) {inputValue.map(inputValue => <div>{inputValue.text}</div>)}
   export default Input;
   //  <label className="label">Enter Binary Input</label>
   //    <p className="input-value">The value of the input is: <span className="highlight">{this.state.value}</span></p>

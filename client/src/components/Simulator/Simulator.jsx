@@ -1,6 +1,6 @@
 
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {sculptToMinimalRenderer} from 'shader-park-core';
 //import { glslToMinimalRenderer } from 'shader-park-core';
 import Input from '../Input/Input.jsx';
@@ -81,6 +81,7 @@ function binaryTree() {
   }
 
 const Simulator = ({ simulatorList }) => { 
+  const [counter, setCounter] = useState(0);
   const shadeRef = useRef(null);
   useEffect(() => {
     if (shadeRef.current) {
@@ -88,15 +89,21 @@ const Simulator = ({ simulatorList }) => {
       sculptToMinimalRenderer(canvas, binaryTree);
        //glslToMinimalRenderer(canvas, spCode);
     }
-  }, []);
+  }, [counter]);
 
   return (
 <>
   <div className="simulator">
     <div>
+  
       <div className="simulator__inside ">
+      
         <div className="simulator__title "> biTreemulator:</div>
+        <button onClick={() => setCounter(counter => counter + 1)} className="btn btn--delta" type="submit"><span>Update State</span>
+           
+            </button>
         <Input />
+      
         <canvas className="my-canvas"></canvas>
         <iframe title="miframie" ref={shadeRef}>
           <body className="removeAdditionaFrame"></body>
@@ -114,7 +121,7 @@ export default Simulator;
 
 
 
-
+//   window.scrollTo(0, ref.current.offsetTop);
 
 
 
