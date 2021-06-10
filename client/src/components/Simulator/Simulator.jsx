@@ -11,7 +11,7 @@ let prepend = () =>{
  let res= `let tree = JSON.parse(\`${tree}\`);\n let binaryTree = ${binaryTree} \n binaryTree(tree)`
  return res
 }
-const Simulator = ({ simulatorList }) => { 
+const Simulator = ({ tree }) => { 
   const shadeRef = useRef(null);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Simulator = ({ simulatorList }) => {
       sculptToMinimalRenderer(canvas, prepend());
        //glslToMinimalRenderer(canvas, spCode);
     }
-  }, );
+  }, tree);
 
   return (
 <>

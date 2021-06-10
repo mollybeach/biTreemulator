@@ -5,7 +5,7 @@ export function binaryTree() {
   let gen = getSpace(), sig=0;
   
   function graph(gen) {
-       displace(0.0,0.5,0.0);
+      displace(0.0,0.5,0.0);
       lightDirection(0.0, 1.0, 1.0);
       displace(0.16*gen.x, 0.16*gen.y, abs(abs(gen.y)-abs(gen.x))*0.025*sig);
       color(1.0,1.0,1.0)
@@ -18,9 +18,9 @@ export function binaryTree() {
   function build(tree, gen) {
       graph(gen)
       gen=gen-1;
-     if (!tree.left && !tree.right) gen.y=gen.y+1;
-     if (tree.left) sig=1,  build(tree.left, gen);
-     if (tree.right) sig=-1, gen.x=gen.x+2, build(tree.right, gen);
+    if (!tree.left && !tree.right) gen.y=gen.y+1;
+    if (tree.left) sig=1,  build(tree.left, gen);
+    if (tree.right) sig=-1, gen.x=gen.x+2, build(tree.right, gen);
     
   }
     build(tree, gen);
