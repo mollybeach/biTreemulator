@@ -1,3 +1,8 @@
+@use '../../partials/variables' as *;
+@use '../../partials/colors' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/mixins' as *;
+
 .input {
   padding-left: 300px;
 
@@ -43,6 +48,8 @@ label {
   margin-bottom: 3.5em;
 }
 #input {
+  color:$raspberrypi;
+  font-size: 30px;
   width: 80%;
   height: 500px;
   resize: none;
