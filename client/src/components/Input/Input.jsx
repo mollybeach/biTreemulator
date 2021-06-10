@@ -33,7 +33,6 @@ const Input = ({props }) => {
       );
     
   }
-
   export default Input;
 
 
@@ -44,7 +43,7 @@ const Input = ({props }) => {
 
 
 
-//    <Prepend inputtree={inputValue}/>
+
 
 
 
