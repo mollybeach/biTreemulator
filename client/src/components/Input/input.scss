@@ -7,13 +7,31 @@
   }
 
   &__input-value {
+    display:flex;
     margin-top: 0.5em;
+    margin-left: 100px;
     font-size: 1.25em;
+    width: 100px;
   }
 
   &__highlight {
     color: #00d1b2;
     font-weight: bold;
+    width: 100px;
+  }
+
+  &__array-value {
+    display:flex;
+    margin-top: 0.5em;
+    margin-left: 100px;
+    font-size: 1.25em;
+    width: 100px;
+  }
+
+  &__array-highlight {
+    color: #00d1b2;
+    font-weight: bold;
+    width: 100px;
   }
 
   &__box {

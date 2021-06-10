@@ -11,7 +11,7 @@ const Simulator = ({ inputtree }) => {
       sculptToMinimalRenderer(canvas, inputtree);
        //glslToMinimalRenderer(canvas, spCode);
     }
-  }, inputtree);
+  }, [inputtree]);
     
   return (
 <>

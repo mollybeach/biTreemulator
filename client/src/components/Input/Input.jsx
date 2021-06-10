@@ -2,12 +2,25 @@
 import React, { useState } from "react";
 import './Input.scss'
 import {tree, binaryTree} from './spCode'
-import Simulator from "../Simulator/Simulator";
+//import Simulator from "../Simulator/Simulator";
 const Input = ({props }) => { 
     const [inputValue, setValue] = useState(tree);
   let prepend = (inputValue) =>{
-    let res= `let tree = JSON.parse(\`${inputValue}\`);\n let binaryTree = ${binaryTree} \n binaryTree(tree)`
+    let res= `JSON.parse(\`${inputValue}\`);\n let binaryTree = ${binaryTree} \n binaryTree(tree)`
     return res
+    }
+  
+    let toObjectLiteral= (inputValue)=>{
+      let unquoted = inputValue.replace(/"([^"]+)":/g, '$1:');
+      return unquoted
+
+    }
+    function preorder(tree, res) {
+      if (!tree) return res;
+     res.push(tree.val);
+      preorder(tree.left, res);
+      preorder(tree.right, res);
+      return res;
     }
       return(
         <>
@@ -24,10 +37,12 @@ const Input = ({props }) => {
               rows={5}
               cols={5}
             />
-              <p className="input__input-value">The value of the input is: <span className="input__highlight">{inputValue}</span></p>
+              <p className="input__input-value">toObjectLiteral:
+              <span className="input__highlight">{toObjectLiteral(inputValue)}</span></p>
+              <p className="input__array-value">toArray:
+              <span className="input__array-highlight">{preorder(toObjectLiteral(inputValue), [])}</span></p>
           </div>
         </div>
-      <Simulator inputtree={prepend(inputValue)}/>
         </div>
       </>    
       );
@@ -35,6 +50,8 @@ const Input = ({props }) => {
   }
   export default Input;
 
+
+  // <Simulator inputtree={prepend(inputValue)}/>
 
 
 
@@ -58,3 +75,7 @@ const Input = ({props }) => {
     };*/
 
     //   const [inputValue] = useState([{ text: 'Learn Hooks' }]);[inputValue]= useState(inputValue) {inputValue.map(inputValue => <div>{inputValue.text}</div>)}
+       //  return unquoted.replace(/,/g, "<br/>");
+  // return unquoted.replace(/,/g, '\n');
+   //  let newLine =unquoted.split(',');
+   // return unquoted.split(',');
