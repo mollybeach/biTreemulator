@@ -7,6 +7,12 @@ import {sculptToMinimalRenderer} from 'shader-park-core';
 
 import './Simulator.scss';
 
+/* eslint-disable */
+/*let prepend = () =>{
+ let res= `let tree = JSON.parse(\`${inputtree}\`);\n let binaryTree = ${binaryTree} \n binaryTree(tree)`
+ return res
+}
+*/
 const Simulator = ({ inputtree }) => { 
   const shadeRef = useRef(null);
   useEffect(() => {

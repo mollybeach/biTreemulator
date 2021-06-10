@@ -1,8 +1,7 @@
 
 import React, { useState } from "react";
 import './Input.scss'
-//import {tree} from '../Simulator/tree'
-import {tree, binaryTree} from '../Simulator/spCode'
+import {tree, binaryTree} from './spCode'
 import Simulator from "../Simulator/Simulator";
 const Input = ({props }) => { 
     const [inputValue, setValue] = useState(tree);
