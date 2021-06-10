@@ -134,3 +134,36 @@
 .removeAddtionalFrame{
 display:none;
 }
+
+.input {
+	padding-top: 2em;
+  
+	&__intro {
+	  font-size: 1.5em;
+	  margin-bottom: 1.5em;
+	}
+  
+	&__input-value {
+	  margin-top: 0.5em;
+	  font-size: 1.25em;
+	}
+  
+	&__highlight {
+	  color: #00d1b2;
+	  font-weight: bold;
+	}
+  
+	&__box {
+	  margin-top: 3.5em;
+	}
+  
+  }
+  label {
+	margin-bottom: 3.5em;
+  }
+  #input {
+	width: 80%;
+	height: 500px;
+	resize: none;
+  }
+  

@@ -41,18 +41,3 @@ const Simulator = ({ tree }) => {
 };
 
 export default Simulator;
-
-
-
-
-//  const [counter, setCounter] = useState(0);
-
-
-
-//  }, [counter]);
-
-
-/*      <button onClick={() => setCounter(counter => counter + 1)} className="btn btn--delta" type="submit"><span>Update State</span>    
-            </button>*/
-
-            //     sculptToMinimalRenderer(canvas, `let tree = JSON.parse(\`${tree}\`);\n let binaryTree = ${binaryTree} \n binaryTree(tree)`);
