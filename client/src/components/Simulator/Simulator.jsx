@@ -1,10 +1,9 @@
-
-
 import { useEffect, useState, useRef } from 'react';
 import {sculptToMinimalRenderer} from 'shader-park-core';
 //import { glslToMinimalRenderer } from 'shader-park-core';
 import Input from '../Input/Input.jsx';
 import './Simulator.scss';
+
 /* eslint-disable */
 let tree ={
   val: 0,
