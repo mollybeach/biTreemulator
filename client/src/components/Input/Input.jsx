@@ -1,14 +1,14 @@
 
 import React, { useState } from "react";
 import './Input.scss'
-import {tree, binaryTree} from './spCode'
+import {tree, binaryTree, jtree} from './spCode'
 //import Simulator from "../Simulator/Simulator";
 const Input = ({props }) => { 
     const [inputValue, setValue] = useState(tree);
-  let prepend = (inputValue) =>{
-    let res= `JSON.parse(\`${inputValue}\`);\n let binaryTree = ${binaryTree} \n binaryTree(tree)`
-    return res
-    }
+ // let prepend = (inputValue) =>{
+   // let res= `JSON.parse(\`${inputValue}\`);\n let binaryTree = ${binaryTree} \n binaryTree(tree)`
+  //  return res
+  //  }
   
     let toObjectLiteral= (inputValue)=>{
       let unquoted = inputValue.replace(/"([^"]+)":/g, '$1:');
@@ -22,27 +22,32 @@ const Input = ({props }) => {
       preorder(tree.right, res);
       return res;
     }
+    let parsedTree= JSON.parse(inputValue);
+    const PrettyPrintJson = ({data}) => (<div><pre class='input__json'>{JSON.stringify(data, undefined, 10) }</pre></div>);
       return(
         <>
       <div className="input">
-        <div className="input__container">
+     
           <h1 className="input__intro">Binary Tree Visualization </h1>
           <div className="input__box">
             <textarea
-              className="input__input-is-medium"
+              className="input__textbox"
               type="text"
               id="input"
               value={inputValue}
+          
               onChange={(e) => setValue(e.target.value)}
-              rows={5}
-              cols={5}
-            />
+              rows={0}
+              cols={0}
+            >hi</textarea>
               <p className="input__input-value">toObjectLiteral:
               <span className="input__highlight">{toObjectLiteral(inputValue)}</span></p>
-              <p className="input__array-value">toArray:
-              <span className="input__array-highlight">{preorder(toObjectLiteral(inputValue), [])}</span></p>
+              <p className="input__array-value">toPreorderArray:
+              <span className="input__array-highlight"> [{preorder(parsedTree, [])}]</span></p>
+              <PrettyPrintJson data={ jtree } />
           </div>
-        </div>
+     
+  
         </div>
       </>    
       );
