@@ -15,39 +15,54 @@ const Input = ({props }) => {
       return unquoted
 
     }
-    function preorder(tree, res) {
+    function preOrder(tree, res) {
       if (!tree) return res;
      res.push(tree.val);
-      preorder(tree.left, res);
-      preorder(tree.right, res);
+      preOrder(tree.left, res);
+      preOrder(tree.right, res);
+      return res;
+    }
+    function inOrder(tree, res) {
+      if (!tree) return res;
+      inOrder(tree.left, res);
+      res.push(tree.val);
+      inOrder(tree.right, res);
+      return res;
+    }
+    function postOrder(tree, res) {
+      if (!tree) return res;
+      postOrder(tree.left, res);
+      postOrder(tree.right, res);
+      res.push(tree.val);
       return res;
     }
     let parsedTree= JSON.parse(inputValue);
-    const PrettyPrintJson = ({data}) => (<div><pre class='input__json'>{JSON.stringify(data, undefined, 10) }</pre></div>);
+  
       return(
         <>
-      <div className="input">
-     
+      <div className="input">   
           <h1 className="input__intro">Binary Tree Visualization </h1>
           <div className="input__box">
-            <textarea
+            <pre class='input__json'>{JSON.stringify(jtree, undefined, 10) }<textarea
               className="input__textbox"
               type="text"
               id="input"
-              value={inputValue}
-          
+              value=''
+             
               onChange={(e) => setValue(e.target.value)}
               rows={0}
               cols={0}
-            >hi</textarea>
+            >hi</textarea></pre>
               <p className="input__input-value">toObjectLiteral:
-              <span className="input__highlight">{toObjectLiteral(inputValue)}</span></p>
-              <p className="input__array-value">toPreorderArray:
-              <span className="input__array-highlight"> [{preorder(parsedTree, [])}]</span></p>
-              <PrettyPrintJson data={ jtree } />
+              <div className="input__highlight">{toObjectLiteral(inputValue)}</div></p>
+              <div className="input__inorder-value">InOrder: (Left, Root, Right) 
+              <div className="input__inorder-highlight"> [{inOrder(parsedTree, [])}]</div></div>
+              <div className="input__array-value">Preorder: (Root, Left, Right)
+              <div className="input__array-highlight"> [{preOrder(parsedTree, [])}]</div></div>
+              <div className="input__array-value">Postorder: (Left, Right, Root)
+              <div className="input__array-highlight"> [{postOrder(parsedTree, [])}]</div></div>
+           
           </div>
-     
-  
         </div>
       </>    
       );
@@ -61,7 +76,8 @@ const Input = ({props }) => {
 
 
 
-
+//   <PrettyPrintJson data={ jtree } />
+//   const PrettyPrintJson = ({data}) => (<div><pre class='input__json'>{JSON.stringify(data, undefined, 10) }</pre></div>);
 
 
 
