@@ -1,8 +1,8 @@
 
 ![GitHub Logo](client/src/assets/Icons/company.svg)
 # Getting Started with BiTreemulator App
-![GitHub Logo](client/src/assets/Icons/blacktree.svg)
 ![GitHub Logo](client/src/assets/images/binaryTree.png)
+![GitHub Logo](client/src/assets/Icons/blacktree.svg)
 ![GitHub Logo](client/src/assets/Icons/blacktree.svg)
 ![GitHub Logo](client/src/assets/Icons/blacktree.svg)
 
