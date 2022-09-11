@@ -1,0 +1,169 @@
+@use '../../partials/variables' as *;
+@use '../../partials/colors' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+
+
+.simulator { 
+  display: flex;
+	width: 100%;
+	height: 90vh;
+	background-color: #FFFFFF;
+	@include h1-page-header;
+	color: $slate;
+
+	&__inside {
+		position: absolute;
+	   	top: 50px;
+		margin-left: 100px;
+		color: $text-grey;
+		@include tablet{
+			top: 10px;
+		}
+		@include desktop{
+		//top: 110px;
+		}
+	}
+	&__title{
+		@include h1-page-header;
+		color: $raspberrypi;
+		font-weight: 700px;
+		@include increment-2-bottom;
+		font-size: 30px;
+
+		@include tablet{
+			font-size: 45px;
+		}
+	}
+	&__subtitle {
+		@include h1-page-header;
+		color: $apple;
+		@include increment-2-bottom;
+		font-size: 16px;
+		@include tablet{
+			padding-top: 24px;
+		}
+		@include desktop{
+			padding-top: 24px;
+		}
+	}
+	&__arrow {
+		width: 1vw;
+		padding-top: 2vw;
+	}
+	&__inside {
+		padding-top: 130px;
+		//position: absolute;
+		color: $text-grey;
+		left: 70px;
+		@include tablet{
+			left: 2px;
+			padding-top: 100px;
+		}
+		@include desktop{
+			padding-top: 10px;
+		}
+	}
+
+	&__arrow {
+		width: 1vw;
+		padding-top: 2vw;
+	}
+	&__subtitle{
+		margin-bottom: 1rem;
+		color: $raspberrypi;
+		padding-right: 1rem;
+		@include increment-2-bottom;
+	    font-size: 24px;
+		@include tablet{
+			font-size: 45px;
+		}
+	}
+
+&__content-background {
+  position: relative;
+  background-size: 21%;
+ // height: 2000px;
+
+}
+}
+/*
+.content {
+	height: 1120px;
+	font-size: 50px;
+	//top: 80px;
+	left: 150px;
+	bottom: 20px;
+	position: relative;
+	z-index: -1;
+	background-image: url('../../assets/Icons/blacktree.svg');
+	background-repeat: no-repeat;
+	background-size: 150%;
+	@include tablet{
+		top: 180px;
+	}
+}
+*/
+.my-canvas {
+	//position: absolute;
+	width: 40vw;
+	height: 40vw;
+	border: 40px solid lavender;
+//	margin-top: 300px;
+   left: 200px;
+	margin-right: 50px;
+	margin-bottom: 300px;
+	top: 400px;
+	@include tablet{
+		
+	margin-left: 24px;
+	width: 40vw;
+	height: 40vw;
+	border: 40px solid lavender;
+	margin-right: 0px;
+	left: 100px;
+	margin-bottom: 500px;
+	top: 600px;
+	}
+		@include desktop{
+		margin-left: 80px;
+		width: 70vw;
+		height: 60vw;
+	}
+  }
+.removeAddtionalFrame{
+display:none;
+}
+/*
+.input {
+	padding-top: 2em;
+  
+	&__intro {
+	  font-size: 1.5em;
+	  margin-bottom: 1.5em;
+	}
+  
+	&__input-value {
+	  margin-top: 0.5em;
+	  font-size: 1.25em;
+	}
+  
+	&__highlight {
+	  color: #00d1b2;
+	  font-weight: bold;
+	}
+  
+	&__box {
+	  margin-top: 3.5em;
+	}
+  
+  }
+  label {
+	margin-bottom: 3.5em;
+  }
+  #input {
+	width: 80%;
+	height: 500px;
+	resize: none;
+  }
+  */
