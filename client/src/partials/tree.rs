@@ -1,3 +1,116 @@
+//write a binary tree in rust and then write a function to print it out in a
+//bfs order
+//this is a binary tree
+struct Node {
+    value: i32,
+    left: Option<Box<Node>>,
+    right: Option<Box<Node>>,
+}
+
+impl Node {
+    fn new(value: i32) -> Node {
+        Node {
+            value: value,
+            left: None,
+            right: None,
+        }
+    }
+}
+
+fn main() {
+    let mut root = Node::new(1);
+    root.left = Some(Box::new(Node::new(2)));
+    root.right = Some(Box::new(Node::new(3)));
+    root.left.as_mut().unwrap().left = Some(Box::new(Node::new(4)));
+    root.left.as_mut().unwrap().right = Some(Box::new(Node::new(5)));
+    root.right.as_mut().unwrap().left = Some(Box::new(Node::new(6)));
+    root.right.as_mut().unwrap().right = Some(Box::new(Node::new(7)));
+    root.left.as_mut().unwrap().left.as_mut().unwrap().left = Some(Box::new(Node::new(8)));
+    root.left.as_mut().unwrap().left.as_mut().unwrap().right = Some(Box::new(Node::new(9)));
+    root.left.as_mut().unwrap().right.as_mut().unwrap().left = Some(Box::new(Node::new(10)));
+    root.left.as_mut().unwrap().right.as_mut().unwrap().right = Some(Box::new(Node::new(11)));
+    root.right.as_mut().unwrap().left.as_mut().unwrap().left = Some(Box::new(Node::new(12)));
+    root.right.as_mut().unwrap().left.as_mut().unwrap().right = Some(Box::new(Node::new(13)));
+    root.right.as_mut().unwrap().right.as_mut().unwrap().left = Some(Box::new(Node::new(14)));
+    root.right.as_mut().unwrap().right.as_mut().unwrap().right = Some(Box::new(Node::new(15)));
+    root.left.as_mut().unwrap().left.as_mut().unwrap().left.as_mut().unwrap().left = Some(Box::new(Node::new(16)));
+    root.left.as_mut().unwrap().left.as_mut().unwrap().left.as_mut().unwrap().right = Some(Box::new(Node::new(17)));
+    root.left.as_mut().unwrap().left.as_mut().unwrap().right.as_mut().unwrap().left = Some(Box::new(Node::new(18)));
+    root.left.as_mut().unwrap().left.as_mut().unwrap().right.as_mut().unwrap().right = Some(Box::new(Node::new(19)));
+    root.left.as_mut().unwrap().right.as_mut().unwrap().left.as_mut().unwrap().left = Some(Box::new(Node::new(20)));
+    root.left.as_mut().unwrap().right.as_mut().unwrap().left.as_mut().unwrap().right = Some(Box::new(Node::new(21)));
+    root.left.as_mut().unwrap().right.as_mut().unwrap().right.as_mut().unwrap().left = Some(Box::new(Node::new(22)));
+    root.left.as_mut().unwrap().right.as_mut().unwrap().right.as_mut().unwrap().right = Some(Box::new(Node::new(23)));
+    root.right.as_mut().unwrap().left.as_mut().unwrap().left.as_mut().unwrap().left = Some(Box::new(Node::new(24)));
+    root.right.as_mut().unwrap().left.as_mut().unwrap().left.as_mut().unwrap().right = Some(Box::new(Node::new(25)));
+}
+
+//this is a function to print out the tree in a bfs order
+fn print_tree(root: &Node) {
+    let mut queue = Vec::new();
+    queue.push(root);
+    while !queue.is_empty() {
+        let node = queue.remove(0);
+        println!("{}", node.value);
+        if node.left.is_some() {
+            queue.push(node.left.as_ref().unwrap());
+        }
+        if node.right.is_some() {
+            queue.push(node.right.as_ref().unwrap());
+        }
+    }
+}
+
+//this is a function to print out the tree in a dfs order
+fn print_tree_dfs(root: &Node) {
+    println!("{}", root.value);
+    if root.left.is_some() {
+        print_tree_dfs(root.left.as_ref().unwrap());
+    }
+    if root.right.is_some() {
+        print_tree_dfs(root.right.as_ref().unwrap());
+    }
+}
+
+//this is a function to print out the tree in a dfs order
+fn print_tree_dfs_pre(root: &Node) {
+    if root.left.is_some() {
+        print_tree_dfs(root.left.as_ref().unwrap());
+    }
+    println!("{}", root.value);
+    if root.right.is_some() {
+        print_tree_dfs(root.right.as_ref().unwrap());
+    }
+}
+
+//this is a function to print out the tree in a dfs order
+fn print_tree_dfs_post(root: &Node) {
+    if root.left.is_some() {
+        print_tree_dfs(root.left.as_ref().unwrap());
+    }
+    if root.right.is_some() {
+        print_tree_dfs(root.right.as_ref().unwrap());
+    }
+    println!("{}", root.value);
+}
+
+//this is a function to print out the tree in a dfs order
+fn print_tree_dfs_in(root: &Node) {
+    if root.left.is_some() {
+        print_tree_dfs(root.left.as_ref().unwrap());
+    }
+    println!("{}", root.value);
+    if root.right.is_some() {
+        print_tree_dfs(root.right.as_ref().unwrap());
+    }
+}
+
+
+
+
+
+
+
 /*************************************TEXT STYLES************************************/
 @use "./colors" as *;
 @use "./breakpoints" as *;
